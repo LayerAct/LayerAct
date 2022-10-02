@@ -5,9 +5,7 @@
 2. ResNet 32 
 3. ResNet 44 
 
-
-
-####CIFAR100 
+#### CIFAR100 
 1. ResNet 20 
 2. ResNet 32 
 3. ResNet 44 
