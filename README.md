@@ -1,5 +1,5 @@
 # Layer-wise Balanced Activation Mechanism (LayerAct)
-The source code of Layer-wise Balanced Activation Mechanism
+The source code and experiment of Layer-wise Balanced Activation Mechanism (LayerAct)
 (https://openreview.net/forum?id=sqPEs1wEizU)
 
 - [LayerAct.py](https://github.com/LayerAct/LayerAct/blob/main/models/LayerAct.py) is source code of LA-SiLU and LA-HardSiLU implemented with pytorch.
