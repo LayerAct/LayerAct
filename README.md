@@ -2,6 +2,10 @@
 The source code of Layer-wise Balanced Activation Mechanism
 (https://openreview.net/forum?id=sqPEs1wEizU)
 
+- [LayerAct.py](https://github.com/LayerAct/LayerAct/blob/main/models/LayerAct.py) is source code of LA-SiLU and LA-HardSiLU implemented with pytorch
+- [ResNet.py(https://github.com/LayerAct/LayerAct/blob/main/models/ResNet.py) is implementation of [ResNet](https://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf) for the experiment. The implementation reffered to the [Pytorch's implementation of ResNet](https://github.com/pytorch/vision/blob/main/torchvision/models/resnet.py).  
+
+
 ## Experiment Environment
 - python 3.9.12
 - numpy 1.19.5
@@ -9,6 +13,7 @@ The source code of Layer-wise Balanced Activation Mechanism
 - torchvision 0.12.0
 
 ## Experiment Setting 
+- Train/Validation: 55000/5000
 - max iteration: around 64000 (until the last epoch end)
 - learning rate: 0.1
 - optimizer: Momentum (0.9) with weight decay 0.0001
