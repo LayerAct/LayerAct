@@ -13,6 +13,7 @@ The source code of Layer-wise Balanced Activation Mechanism
 - torchvision 0.12.0
 
 ## Experiment Setting 
+### CIFAR10 & CIFAR100
 - Train/Validation: 55000/5000
 - max iteration: around 64000 (until the last epoch end)
 - learning rate: 0.1
