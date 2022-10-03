@@ -24,11 +24,11 @@ The source code of Layer-wise Balanced Activation Mechanism
 |        ReLU |     91.68 |     91.42 | 
 |        SiLU |     91.92 |     91.52 | 
 |     LA-SiLU |     **91.97** |     **91.75** | 
+| LA-HardSiLU |     91.74 |     91.47 | 
 
 #### ResNet32
 | Activation | Top1 Best | Top1 Mean | 
 | ----------- | --------- | --------- | 
-| LA-HardSiLU |     91.74 |     91.47 | 
 |        ReLU |     91.96 |     91.79 | 
 |        SiLU |     92.16 |     91.96 | 
 |     LA-SiLU |     **92.64** |     **92.3** | 
@@ -39,27 +39,3 @@ The source code of Layer-wise Balanced Activation Mechanism
 |        SiLU |     92.31 |     91.94 | 
 |     LA-SiLU |     **93.00** |     **92.67** | 
 | LA-HardSiLU |     91.93 |     91.68 | 
-
-### CIFAR100
-#### ResNet20
-| Activation | Top1 Best | Top1 Mean | 
-| ----------- | --------- | --------- | 
-|        ReLU |     91.68 |     91.42 | 
-|        SiLU |     91.92 |     91.52 | 
-|     LA-SiLU |     **91.97** |     **91.75** | 
-
-#### ResNet32
-| Activation | Top1 Best | Top1 Mean | 
-| ----------- | --------- | --------- | 
-| LA-HardSiLU |     91.74 |     91.47 | 
-|        ReLU |     91.96 |     91.79 | 
-|        SiLU |     92.16 |     91.96 | 
-|     LA-SiLU |     **92.64** |     **92.3** | 
-| LA-HardSiLU |     92.16 |     91.84 | 
-
-### ResNet44
-|        ReLU |     92.59 |     92.38 | 
-|        SiLU |     92.31 |     91.94 | 
-|     LA-SiLU |     **93.00** |     **92.67** | 
-| LA-HardSiLU |     91.93 |     91.68 | 
-
