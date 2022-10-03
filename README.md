@@ -23,7 +23,7 @@ The source code and experiments of Layer-wise Balanced Activation Mechanism (Lay
 - random seed for weight initialization: 11*n (n=1,2,...)
 
 ## Experiment
-- We show the performance of the models with best and mean accuracy values of 5-runs. 
+- We show the performance of the models with the best and mean accuracy of 5-runs. 
 - Top-1 accuracy: The model's prediction is correct when the prediction is exactly the same with the true label. 
 - Top-5 accuracy: The model's prediction is correct when the top-5 scored predictions include the true label. 
 ### CIFAR10
