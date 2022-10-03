@@ -18,7 +18,7 @@ The source code of Layer-wise Balanced Activation Mechanism
 
 ## Accuracy 
 ### CIFAR10
-#### ResNet20
+##### ResNet20
 | Activation  | Top1 Best | Top1 Mean | 
 | ----------- | --------- | --------- | 
 |        ReLU |     91.68 |     91.42 | 
@@ -26,7 +26,7 @@ The source code of Layer-wise Balanced Activation Mechanism
 |     LA-SiLU |     **91.97** |     **91.75** | 
 | LA-HardSiLU |     91.74 |     91.47 | 
 
-#### ResNet32
+##### ResNet32
 | Activation  | Top1 Best | Top1 Mean | 
 | ----------- | --------- | --------- | 
 |        ReLU |     91.96 |     91.79 | 
@@ -34,7 +34,7 @@ The source code of Layer-wise Balanced Activation Mechanism
 |     LA-SiLU |     **92.64** |     **92.3** | 
 | LA-HardSiLU |     92.16 |     91.84 | 
 
-### ResNet44
+##### ResNet44
 | Activation  | Top1 Best | Top1 Mean | 
 | ----------- | --------- | --------- | 
 |        ReLU |     92.59 |     92.38 | 
@@ -44,7 +44,7 @@ The source code of Layer-wise Balanced Activation Mechanism
 
 
 ### CIFAR100
-#### ResNet20
+##### ResNet20
 | Activation  | Top1 Best | Top1 Mean | Top5 Best | Top5 Mean |   
 | ----------- | --------- | --------- | --------- | --------- | 
 |        ReLU |     66.25 |     65.98 |     89.81 |     89.62 | 
@@ -52,7 +52,7 @@ The source code of Layer-wise Balanced Activation Mechanism
 |     LA-SiLU |     66.65 |     **66.42** |     **90.32** |     **89.97** | 
 | LA-HardSiLU |     66.64 |     66.30 |     90.04 |     89.84 | 
 
-#### ResNet32
+##### ResNet32
 | Activation  | Top1 Best | Top1 Mean | Top5 Best | Top5 Mean | 
 | ----------- | --------- | --------- | --------- | --------- | 
 |        ReLU |     67.63 |     67.38 |     **90.34** |     90.09 | 
@@ -60,7 +60,7 @@ The source code of Layer-wise Balanced Activation Mechanism
 |     LA-SiLU |     67.99 |     **67.84** |     90.33 |     **90.11** | 
 | LA-HardSiLU |     67.88 |     67.16 |     89.96 |     89.73 | 
 
-### ResNet44
+##### ResNet44
 | Activation  | Top1 Best | Top1 Mean | Top5 Best | Top5 Mean | 
 | ----------- | --------- | --------- | --------- | --------- | 
 |        ReLU |     68.68 |     68.44 |     90.47 |     90.29 | 
