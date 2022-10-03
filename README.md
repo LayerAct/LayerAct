@@ -35,7 +35,7 @@ The source code of Layer-wise Balanced Activation Mechanism
 | LA-HardSiLU |     92.16 |     91.84 | 
 
 ### ResNet44
-| Activation  | Top1 Best | Top1 Mean | Top5 Best | Top5 Mean |  
+| Activation  | Top1 Best | Top1 Mean | 
 | ----------- | --------- | --------- | 
 |        ReLU |     92.59 |     92.38 | 
 |        SiLU |     92.31 |     91.94 | 
