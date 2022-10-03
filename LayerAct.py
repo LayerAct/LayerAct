@@ -10,21 +10,8 @@ from torch.nn.parameter import Parameter
 import warnings
 warnings.filterwarnings('ignore')
 
-def calculate_mean_std_for_forward(inputs, shape, norm_type, std = True) :     
-    if len(shape) == 2 : 
-        cal_dim = [1]
-    elif norm_type == 'Batch' : 
-        cal_dim = [0, 2, 3]
-    elif norm_type == 'Channel' : 
-        cal_dim = [1]
-    elif norm_type == 'Layer' : 
-        cal_dim = [1, 2, 3]
-    elif norm_type == 'Instance' : 
-        if shape[2]*shape[3] < shape[1] : 
-            cal_dim = [1]
-        else : 
-            cal_dim = [2, 3]
-
+def calculate_mean_std_for_forward(inputs, std = True) :     
+    cal_dim = [1, 2, 3]
     mean = inputs.mean(dim=cal_dim, keepdim=True)
     if std : 
         std = inputs.std(dim=cal_dim, keepdim=True)
@@ -41,9 +28,8 @@ def calculate_means_for_backward(t_1, t_2, cal_dim) :
 #############################################################
 
 class LA_SiLU(nn.Module) : 
-    def __init__(self, input_shape=None, norm_type='Channel', affine=True, epsilon=1e-5) : 
+    def __init__(self, input_shape=None, affine=True, epsilon=1e-5) : 
         super(LA_SiLU, self).__init__()
-        self.norm_type = norm_type
         self.affine = affine
         self.epsilon = epsilon
         if self.affine : 
@@ -52,17 +38,16 @@ class LA_SiLU(nn.Module) :
 
     def forward(self, inputs) : 
         if self.affine : 
-            return la_silu_affine.apply(inputs, self.gain, self.bias, self.norm_type, self.epsilon)
+            return la_silu_affine.apply(inputs, self.gain, self.bias, self.epsilon)
         else : 
-            return la_silu.apply(inputs, self.norm_type, self.epsilon)
+            return la_silu.apply(inputs, self.epsilon)
 
 
 class la_silu(torch.autograd.Function):
     @staticmethod
-    def forward(ctx, inputs, norm_type, epsilon):
-        shape = inputs.shape
+    def forward(ctx, inputs, epsilon):
 
-        mean, std, cal_dim = calculate_mean_std_for_forward(inputs, shape, norm_type)
+        mean, std, cal_dim = calculate_mean_std_for_forward(inputs)
         nor = torch.div(torch.sub(inputs, mean), std+epsilon)
         scaler = torch.sigmoid(nor)
         z = torch.mul(scaler, inputs)
@@ -92,7 +77,7 @@ class la_silu(torch.autograd.Function):
 
 class la_silu_affine(torch.autograd.Function):
     @staticmethod
-    def forward(ctx, inputs, gain, bias, norm_type, epsilon):
+    def forward(ctx, inputs, gain, bias, epsilon):
         shape = inputs.shape
         gain_dim = [0]
         if len(shape) > 2 : 
@@ -100,7 +85,7 @@ class la_silu_affine(torch.autograd.Function):
             bias = bias.reshape([s for s in bias.shape] + [1 for s in range(0, len(shape)-len(bias.shape))])
             gain_dim = [0, 2, 3]
 
-        mean, std, cal_dim = calculate_mean_std_for_forward(inputs, shape, norm_type)
+        mean, std, cal_dim = calculate_mean_std_for_forward(inputs)
         nor = torch.div(torch.sub(inputs, mean), std+epsilon)
         aff = torch.add(torch.mul(nor, gain), bias)
         scaler = torch.sigmoid(aff)
@@ -139,11 +124,10 @@ class la_silu_affine(torch.autograd.Function):
 
 #############################################################
 
-class LA_nHardSiLU(nn.Module) : 
-    def __init__(self, input_shape=None, a=3, norm_type='channel', affine=True, epsilon=1e-5) : 
-        super(LA_nHardSiLU, self).__init__()
+class LA_HardSiLU(nn.Module) : 
+    def __init__(self, input_shape=None, a=3, affine=True, epsilon=1e-5) : 
+        super(LA_HardSiLU, self).__init__()
         self.a = a
-        self.norm_type = norm_type
         self.affine = affine
         self.epsilon = epsilon
         if self.affine : 
@@ -152,21 +136,21 @@ class LA_nHardSiLU(nn.Module) :
 
     def forward(self, inputs) : 
         if self.affine : 
-            return la_hardsilu_affine.apply(inputs, self.a, self.gain, self.bias, self.norm_type, self.epsilon)
+            return la_hardsilu_affine.apply(inputs, self.a, self.gain, self.bias, self.epsilon)
         else : 
-            return la_hardsilu.apply(inputs, self.a, self.norm_type, self.epsilon)
+            return la_hardsilu.apply(inputs, self.a, self.epsilon)
 
 
 class la_hardsilu(torch.autograd.Function):
     @staticmethod
-    def forward(ctx, inputs, a, norm_type, epsilon):
+    def forward(ctx, inputs, a, epsilon):
         shape = inputs.shape
         device = inputs.device
         
         ones = torch.ones(shape, device=device)
         zeros = torch.zeros(shape, device=device)
 
-        mean, std, cal_dim = calculate_mean_std_for_forward(inputs, shape, norm_type)
+        mean, std, cal_dim = calculate_mean_std_for_forward(inputs)
         nor = torch.div(torch.sub(inputs, mean), std+epsilon)
         scaler = torch.where(nor <= -1*a, zeros.clone(), nor.clone()/(a*2)+0.5)
         scaler = torch.where(nor >= a, ones.clone(), scaler)
@@ -214,7 +198,7 @@ class la_hardsilu_affine(torch.autograd.Function):
         ones = torch.ones(shape, device=device)
         zeros = torch.zeros(shape, device=device)
 
-        mean, std, cal_dim = calculate_mean_std_for_forward(inputs, shape, norm_type)
+        mean, std, cal_dim = calculate_mean_std_for_forward(inputs)
         nor = torch.div(torch.sub(inputs, mean), std+epsilon)
         aff = torch.add(torch.mul(nor, gain), bias)
         scaler = torch.where(aff <= -1*a, zeros.clone(), aff.clone()/(a*2)+0.5)
