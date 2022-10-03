@@ -21,7 +21,7 @@ The source code of Layer-wise Balanced Activation Mechanism
 - random seed for data split: 0
 - random seed for weight initialization: 11*n (n=1,2,...)
 
-## Accuracy 
+## Experiment
 ### CIFAR10
 ##### ResNet20
 | Activation  | Top1 Best | Top1 Mean | 
@@ -73,3 +73,4 @@ The source code of Layer-wise Balanced Activation Mechanism
 |     LA-SiLU |     68.89 |     **68.68** |     **90.80** |     **90.42** | 
 | LA-HardSiLU |     67.67 |     66.80 |     89.60 |     89.34 | 
 
+- More experiment will be updated. 
