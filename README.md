@@ -4,7 +4,7 @@ The source code and experiments of Layer-wise Balanced Activation Mechanism (Lay
 
 - [LayerAct.py](https://github.com/LayerAct/LayerAct/blob/main/models/LayerAct.py) is the source code of LA-SiLU and LA-HardSiLU implemented with pytorch.
 - [ResNet.py](https://github.com/LayerAct/LayerAct/blob/main/models/ResNet.py) is our implementation of [ResNet (He et al., 2016)](https://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf) based on the [official implementation of pytorch](https://github.com/pytorch/vision/blob/main/torchvision/models/resnet.py) for the experiment.  
-- [trained_models](https://github.com/LayerAct/LayerAct/tree/main/trained_models) contains the trained network of our experiments. 
+- [trained_models](https://github.com/LayerAct/LayerAct/tree/main/trained_models) contains the trained networks of our experiments. 
 
 ## Experiment Environment
 - python 3.9.12
@@ -23,10 +23,11 @@ The source code and experiments of Layer-wise Balanced Activation Mechanism (Lay
 - random seed for weight initialization: 11*n (n=1,2,...)
 
 ## Experiment
-- We show the performance of the models with best and mean accuracy of 5-runs. 
+- We show the performance of the models with best and mean accuracy values of 5-runs. 
 - Top-1 accuracy: The model's prediction is correct when the prediction is exactly the same with the true label. 
 - Top-5 accuracy: The model's prediction is correct when the top-5 scored predictions include the true label. 
 ### CIFAR10
+- CIFAR10 is an image dataset for classification task with 10 classes. 
 ##### ResNet20
 | Activation  | Top1 Best | Top1 Mean | 
 | ----------- | --------- | --------- | 
@@ -53,6 +54,7 @@ The source code and experiments of Layer-wise Balanced Activation Mechanism (Lay
 
 
 ### CIFAR100
+- CIFAR100 is an image dataset for classification task with 100 classes. 
 ##### ResNet20
 | Activation  | Top1 Best | Top1 Mean | Top5 Best | Top5 Mean |   
 | ----------- | --------- | --------- | --------- | --------- | 
