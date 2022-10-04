@@ -1,7 +1,7 @@
 # Introduction
 The implementation of LA-SiLU and LA-HardSiLU
 
-# Front and Back-propagation
+# Front and Back-propagation of LayerAct functions
 ## Front-propagation
 $$
 \begin{aligned}
