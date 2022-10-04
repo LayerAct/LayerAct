@@ -6,14 +6,14 @@ The implementation of LA-SiLU and LA-HardSiLU
 $$
 \begin{aligned}
 y_i^l &= {W_i^l}^{T}x_i^l \\
-n^{l}_{i} &= \frac{y^{l}_{i}-\mu^{l}}{\sigma^{l}} \\
-a^{l}_{i} &= y^{l}_{i} s\left(n^{l}_{i}\right) \\
+n_i^l &= \frac{y_i^l-\mu^l}{\sigma^l} \\
+a_i^l &= y_i^l s\left(n_i^l\right) \\
 \end{aligned}
 $$
 
 ## Back-propagation
 $$
 \begin{aligned}
-\frac{dL}{dy^{l}_{i}} &= \frac{dL}{da^{l}_{i}} s\left(n^{l}_{i}\right) + \sum^{H}_{j=1}{y^{l}_{j} \frac{\partial s\left(n^{l}_{j}\right)}{\partial n^{l}_{j}} \frac{\partial n^{l}_{j}}{\partial y^{l}_{j}} \\
+\frac{dL}{dy_i^l} &= \frac{dL}{da_i^l} s\left(n_i^l\right) + \sum_{j=1}^H{y_i^l \frac{\partial s\left(n_i^l\right)}{\partial n_i^l} \frac{\partial n_i^l}{\partial y_i^l} \\
 \end{aligned}
 $$
