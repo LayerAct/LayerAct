@@ -14,6 +14,6 @@ $$
 ## Back-propagation
 $$
 \begin{aligned}
-\frac{dL}{dy_i^l} &= \frac{dL}{da_i^l} s\left(n_i^l\right) + \sum_{j=1}^H{y_i^l \frac{\partial s\left(n_i^l\right)}{\partial n_i^l} \frac{\partial n_i^l}{\partial y_i^l}} \\
+\frac{dL}{dy_i^l} &= \frac{dL}{da_i^l} s\left(n_i^l\right) + \sum_{j=1}^H{y_j^l \frac{\partial s\left(n_j^l\right)}{\partial n_j^l} \frac{\partial n_j^l}{\partial y_i^l}} \\
 \end{aligned}
 $$
