@@ -5,7 +5,7 @@ The implementation of LA-SiLU and LA-HardSiLU
 ## Front-propagation
 $$
 \begin{aligned}
-y^{l}_{i} &= {W^{l}_{i}}^{T}x^{l}_{i} \\
+y_i^l &= {W_i^l}^{T}x_i^l \\
 n^{l}_{i} &= \frac{y^{l}_{i}-\mu^{l}}{\sigma^{l}} \\
 a^{l}_{i} &= y^{l}_{i} s\left(n^{l}_{i}\right) \\
 \end{aligned}
