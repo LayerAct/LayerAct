@@ -16,6 +16,8 @@ The source code and experiments of Layer-wise Balanced Activation Mechanism (Lay
 ### CIFAR10 & CIFAR100
 - Train/Validation: 55000/5000
 - max iteration: around 64000 (until the last epoch end)
+- 32X32 random crop
+- horizontal flip
 - learning rate: 0.1
 - optimizer: Momentum (0.9) with weight decay 0.0001
 - lr scheduler: 0.1 at iteration 32000 and 48000
