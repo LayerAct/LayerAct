@@ -34,6 +34,7 @@ The source code and experiments of Layer-wise Balanced Activation Mechanism (Lay
 | Activation  | Top1 Best | Top1 Mean | 
 | ----------- | --------- | --------- | 
 |        ReLU |     91.68 |     91.42 | 
+|   LeakyReLU |     91.49 |     91.18 | 
 |        SiLU |     91.92 |     91.52 | 
 |     LA-SiLU |     **91.97** |     **91.75** | 
 | LA-HardSiLU |     91.74 |     91.47 | 
@@ -42,6 +43,7 @@ The source code and experiments of Layer-wise Balanced Activation Mechanism (Lay
 | Activation  | Top1 Best | Top1 Mean | 
 | ----------- | --------- | --------- | 
 |        ReLU |     91.96 |     91.79 | 
+|   LeakyReLU |     92.23 |     91.87 | 
 |        SiLU |     92.16 |     91.96 | 
 |     LA-SiLU |     **92.64** |     **92.3** | 
 | LA-HardSiLU |     92.16 |     91.84 | 
@@ -50,10 +52,10 @@ The source code and experiments of Layer-wise Balanced Activation Mechanism (Lay
 | Activation  | Top1 Best | Top1 Mean | 
 | ----------- | --------- | --------- | 
 |        ReLU |     92.59 |     92.38 | 
+|   LeakyReLU |     92.42 |     92.19 | 
 |        SiLU |     92.31 |     91.94 | 
 |     LA-SiLU |     **93.00** |     **92.67** | 
 | LA-HardSiLU |     91.93 |     91.68 | 
-
 
 ### CIFAR100
 - CIFAR100 is an image dataset for classification task with 100 classes. 
