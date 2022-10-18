@@ -23,7 +23,6 @@ The source code and experiments of Layer-wise Balanced Activation Mechanism (Lay
 - lr scheduler: 0.1 at iteration 32000 and 48000
 - random seed for data split: 0
 - random seed for weight initialization: 11*n (n=1,2,...)
-- for WideResNet, dropout rate is 0.3
 
 ## Experiment
 - We show the performance of the models with the best and mean accuracy of 5-runs. 
@@ -60,7 +59,7 @@ The source code and experiments of Layer-wise Balanced Activation Mechanism (Lay
 |     LA-SiLU |     **93.00** |     **92.67** | 
 | LA-HardSiLU |     91.93 |     91.68 | 
 
-##### WideResNet28-10
+##### WideResNet28-10 with dropout rate 0.3
 | Activation  | Top1 Best | Top1 Mean | 
 | ----------- | --------- | --------- | 
 |        ReLU |     94.63 |     94.03 | 
