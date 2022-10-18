@@ -38,6 +38,7 @@ The source code and experiments of Layer-wise Balanced Activation Mechanism (Lay
 |        SiLU |     91.92 |     91.52 | 
 |     LA-SiLU |     **91.97** |     **91.75** | 
 | LA-HardSiLU |     91.74 |     91.47 | 
+- The result of ResNet20 above is performed with server1, not server3. 
 
 ##### ResNet32
 | Activation  | Top1 Best | Top1 Mean | 
