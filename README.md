@@ -14,7 +14,7 @@ The source code and experiments of Layer-wise Balanced Activation Mechanism (Lay
 
 ## Experiment Setting 
 ### CIFAR10 & CIFAR100
-- Train/Validation: 55000/5000
+- train/Validation: 55000/5000
 - max iteration: around 64000 (until the last epoch end)
 - 32X32 random crop
 - horizontal flip
@@ -23,11 +23,13 @@ The source code and experiments of Layer-wise Balanced Activation Mechanism (Lay
 - lr scheduler: 0.1 at iteration 32000 and 48000
 - random seed for data split: 0
 - random seed for weight initialization: 11*n (n=1,2,...)
+- for WideResNet, dropout rate is 0.3
 
 ## Experiment
 - We show the performance of the models with the best and mean accuracy of 5-runs. 
 - Top-1 accuracy: The model's prediction is correct when the prediction is exactly the same with the true label. 
 - Top-5 accuracy: The model's prediction is correct when the top-5 scored predictions include the true label. 
+
 ### CIFAR10
 - CIFAR10 is an image dataset for classification task with 10 classes. 
 ##### ResNet20
@@ -57,6 +59,15 @@ The source code and experiments of Layer-wise Balanced Activation Mechanism (Lay
 |        SiLU |     92.31 |     91.94 | 
 |     LA-SiLU |     **93.00** |     **92.67** | 
 | LA-HardSiLU |     91.93 |     91.68 | 
+
+##### WideResNet28-10
+| Activation  | Top1 Best | Top1 Mean | 
+| ----------- | --------- | --------- | 
+|        ReLU |     94.63 |     94.03 | 
+|   LeakyReLU |     94.3 |     94.06 | 
+|        SiLU |     93.6 |     93.16 | 
+|     LA-SiLU |     **94.87** |     **94.24** | 
+| LA-HardSiLU |     94.7 |     94.14 | 
 
 ### CIFAR100
 - CIFAR100 is an image dataset for classification task with 100 classes. 
