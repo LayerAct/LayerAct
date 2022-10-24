@@ -40,7 +40,7 @@ We show the bias of the activation functions between samples with the standard d
 |        ReLU |     91.68 |     91.42 | 1.514     | 1.556     |
 |   LeakyReLU |     91.49 |     91.18 | 1.487     | 1.541     |
 |        SiLU |     91.92 |     91.52 | 1.564     | 1.596     |
-|     LA-SiLU |     **91.97** |     **91.75** | **1.381**     | 1.401     |
+|     LA-SiLU |     **91.97** |     **91.75** | **1.381**     | **1.401**     |
 | LA-HardSiLU |     91.74 |     91.47 | 1.417     | 1.447     |
 - The result of ResNet20 above is performed with server1, not server3. 
 
