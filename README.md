@@ -28,9 +28,10 @@ The source code and experiments of Layer-wise Balanced Activation Mechanism (Lay
 - We show the performance of the models with the best and mean accuracy of 5-runs.
 - Top-1 accuracy: The model's prediction is correct when the prediction is exactly the same as the true label.
 - Top-5 accuracy: The model's prediction is correct when the top-5 scored predictions include the true label.
-We show the bias of the activation functions between samples with the standard deviation (std) of loss between the test samples
+- We show the bias of the activation functions between samples with the standard deviation (std) of loss between the test samples
 - std Best : The lowest standard deviation of loss between the test samples among 5-runs.
 - std Mean : The mean of standard deviation of loss between the test samples of 5-runs.
+- LA-SiLU shows better performance than other activation functions in most case, and [the training loss of LA-SiLU also converges faster or similar.](https://github.com/LayerAct/LayerAct/blob/main/fig/README.md)
 
 ### CIFAR10
 - CIFAR10 is an image dataset for classification task with 10 classes. 
