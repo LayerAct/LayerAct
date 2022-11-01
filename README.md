@@ -31,10 +31,11 @@ The source code and experiments of Layer-wise Balanced Activation Mechanism (Lay
 - We show the bias of the activation functions between samples with the standard deviation (std) of loss between the test samples
 - std Best : The lowest standard deviation of loss between the test samples among 5-runs.
 - std Mean : The mean of standard deviation of loss between the test samples of 5-runs.
-- LA-SiLU shows better performance than other activation functions in most case, and [the training loss of LA-SiLU also converges faster or similar.](https://github.com/LayerAct/LayerAct/blob/main/fig/README.md)
+- LA-SiLU shows better performance than other activation functions in most case, and the training loss of LA-SiLU also converges faster or similar.
+- [See the fig page for the plots of training loss](https://github.com/LayerAct/LayerAct/blob/main/fig/README.md)
 
 ### CIFAR10
-- CIFAR10 is an image dataset for classification task with 10 classes. 
+- CIFAR10 is an image dataset for classification task with 10 classes.
 ##### ResNet20
 | Activation  | Top1 Best | Top1 Mean | std Best  | std Mean  |
 | ----------- | --------- | --------- | --------- | --------- |  
