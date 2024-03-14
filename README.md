@@ -1,5 +1,5 @@
 # Layer-level activation (LayerAct) Mechanism
-This repository contains the PyTorch based implementation of Layer-level activation Mechanism (LayerAct). 
+This repository contains the PyTorch based implementation of Layer-level activation (LayerAct) functions. 
 
 ## Enviornment and Datasets 
 ### Install
