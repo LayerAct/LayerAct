@@ -28,7 +28,7 @@ For the experimental reproduction, you need 7 datasets, (CIFAR10, CIAFR100, Imag
 
 ## Usage 
 ### Evaluation 
-We provide the trained networks from our experiments are available on our [anonymous Google Drive](https://drive.google.com/drive/folders/1EhTmpKoSOn8a_aD0Iy3AizkFfMp_0XoO?usp=sharing).
+We provide the trained networks from our experiments are available on our [anonymous Google Drive](https://drive.google.com/drive/folders/10LNLxGxyDVCk1J3wthxmCYsyKnpC6CC1?usp=sharing).
 - Use the scripts file in the `scripts` folder to evaluate the trained networks.
 
 - For example, to evaluate the ResNet20 with LA-SiLU on CIFAR10 with a single GPU (cuda:0):
