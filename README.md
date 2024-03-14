@@ -1,8 +1,9 @@
 # Layer-level activation (LayerAct) Mechanism
+This repository contains the PyTorch based implementation of Layer-level activation Mechanism (LayerAct). 
 
 ## Enviornment and Datasets 
 ### Install
-Create a environment and activate it. 
+Create a conda virtual environment and activate it. 
 ```
 conda create -n layeract python=3.9.12
 conda activate layeract
