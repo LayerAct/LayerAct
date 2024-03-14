@@ -59,7 +59,7 @@ bash ./scripts/CIFAR/train.sh CIFAR10 resnet20 la_silu <your-CIFAR10-path> <your
 bash ./scripts/ImageNet/train.sh resnet50 la_silu <your-CIFAR10-path> <your-GPU-device-ids-to-use>
 ```
 
--To train UNets on medical image dataset, run:
+- To train UNets on medical image dataset, run:
 ```
 bash ./scripts/UNet/train.sh la_silu <your-CIFAR10-path> <your-GPU-device-ids-to-use>
 ```
